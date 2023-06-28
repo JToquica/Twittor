@@ -48,6 +48,10 @@ self.addEventListener("activate", e => {
                 if (key !== STATIC_CHACHE_NAME && key.includes('static')) {
                     return caches.delete(key);
                 }
+
+                if (key !== DYNAMIC_CACHE_NAME && key.includes('dynamic')) {
+                    return caches.delete(key);
+                }
             });
         });
 
